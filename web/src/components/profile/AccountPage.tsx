@@ -95,7 +95,7 @@ export function AccountPage() {
                     ? preview
                       ? t.t('auth.preview')
                       : astroxUser
-                        ? t.t('account.signedInZalo')
+                        ? t.t(astroxUser.provider === 'google' ? 'account.signedInGoogle' : 'account.signedInZalo')
                         : t.t('auth.signedIn')
                     : t.t('dash.notSignedIn')}
               </span>
@@ -273,7 +273,7 @@ export function AccountPage() {
                           {preview
                             ? t.t('account.previewAccount')
                             : astroxUser
-                              ? t.t('account.zalo')
+                              ? t.t(astroxUser.provider === 'google' ? 'account.google' : 'account.zalo')
                               : t.t('account.astroxAccount')}
                         </p>
                       </div>
